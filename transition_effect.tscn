@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3 uid="uid://7pjg8tmnf0uu"]
+
+[sub_resource type="GDScript" id="GDScript_2mtuu"]
+script/source = "extends Node
+
+func _ready():
+	print(\"Transition Effect Loaded\")
+	print(\"Children of this node:\", get_children())  # Print all children of CanvasLayer
+	print(\"Is transition_effect a valid node?\", TransitionEffect)
+
+	if not has_node(\"AnimationPlayer\"):
+		print(\"Error: AnimationPlayer node not found!\")
+	else:
+		print(\"AnimationPlayer found:\", $AnimationPlayer)
+		
+		print(\"Available animations:\", $AnimationPlayer.get_animation_list())
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+	
+"
+
+[sub_resource type="Animation" id="Animation_v4uk5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3tdn7"]
+resource_name = "fadein"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.105882, 0.105882, 0.105882, 0.027451), Color(0.0255313, 0.0254797, 0.154577, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_khb3m"]
+resource_name = "fadeout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.105882, 0.105882, 0.105882, 1), Color(0.105882, 0.105882, 0.105882, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iv3qj"]
+_data = {
+"RESET": SubResource("Animation_v4uk5"),
+"fadein": SubResource("Animation_3tdn7"),
+"fadeout": SubResource("Animation_khb3m")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = SubResource("GDScript_2mtuu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_iv3qj")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+color = Color(0, 0, 0, 1)

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://puethe5kq5cu"
+path="res://.godot/imported/(LOOP-READY) Track 6 - Warlords Guildhall_3.wav-4ca16d5f581e359687c5953d6f1b0d11.sample"
+
+[deps]
+
+source_file="res://assets/WAV/WAV/(LOOP-READY) Track 6 - Warlords Guildhall_3.wav"
+dest_files=["res://.godot/imported/(LOOP-READY) Track 6 - Warlords Guildhall_3.wav-4ca16d5f581e359687c5953d6f1b0d11.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ngttv7g15hxm"
+path="res://.godot/imported/(LOOP-READY) Track 4 - Blacksmith's Shop_2.wav-497582a2e22fb155e6ce1c472419d9fc.sample"
+
+[deps]
+
+source_file="res://assets/WAV/WAV/(LOOP-READY) Track 4 - Blacksmith's Shop_2.wav"
+dest_files=["res://.godot/imported/(LOOP-READY) Track 4 - Blacksmith's Shop_2.wav-497582a2e22fb155e6ce1c472419d9fc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

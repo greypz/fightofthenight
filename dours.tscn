@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://dohgaiemy6p16"]
+
+[ext_resource type="Texture2D" uid="uid://cwbg835feskmh" path="res://assets/Pixel Gate part 2.png" id="1_mncrx"]
+[ext_resource type="PackedScene" uid="uid://7pjg8tmnf0uu" path="res://transition_effect.tscn" id="2_03yyl"]
+
+[sub_resource type="GDScript" id="GDScript_7fqyh"]
+script/source = "extends Area2D
+@onready var animation= $CanvasLayer/AnimationPlayer
+@onready var colorrect =$CanvasLayer/ColorRect
+
+@export var next_scene: String = \"res://springstarfields.tscn\"  # Set this in the Inspector
+
+func _on_body_entered(body):
+	if body is Player: 
+		transition_to_scene()
+
+func transition_to_scene():
+	if next_scene.is_empty():
+		print(\"Error: next_scene is not set!\")
+		return
+	colorrect.visible = true
+	animation.play(\"fadein\")
+	await get_tree().create_timer(0.8).timeout
+	get_tree().change_scene_to_file(next_scene)
+
+	# Call the transition effect properly
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uhtn"]
+size = Vector2(1311, 1818)
+
+[node name="duur" type="Area2D"]
+scale = Vector2(0.0427983, 0.0457142)
+script = SubResource("GDScript_7fqyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.5, -915)
+shape = SubResource("RectangleShape2D_3uhtn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -915)
+scale = Vector2(20, 20)
+texture = ExtResource("1_mncrx")
+region_enabled = true
+region_rect = Rect2(415.105, 148.868, 66.0572, 91.1513)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_03yyl")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

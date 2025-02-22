@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://pyjq7odcv8cr"
+path="res://.godot/imported/(LOOP-READY) Track 1 - Outer Fields_1.wav-0af46bb07717ce1793b49c6e83c9f59c.sample"
+
+[deps]
+
+source_file="res://assets/WAV/WAV/(LOOP-READY) Track 1 - Outer Fields_1.wav"
+dest_files=["res://.godot/imported/(LOOP-READY) Track 1 - Outer Fields_1.wav-0af46bb07717ce1793b49c6e83c9f59c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

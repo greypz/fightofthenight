@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://xq7yjbs6vyeo"]
+
+[ext_resource type="Script" path="res://ninja.gd" id="1_mllgs"]
+[ext_resource type="Texture2D" uid="uid://cdebiplnskm14" path="res://assets/FreeNinja/FreeNinja/YellowNinja/yellowNinja - idle.png" id="1_v6w7r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1nkm"]
+atlas = ExtResource("1_v6w7r")
+region = Rect2(0, 53, 128, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdtwf"]
+atlas = ExtResource("1_v6w7r")
+region = Rect2(128, 53, 128, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdtso"]
+atlas = ExtResource("1_v6w7r")
+region = Rect2(256, 53, 128, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_str2o"]
+atlas = ExtResource("1_v6w7r")
+region = Rect2(384, 53, 128, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c1s8"]
+atlas = ExtResource("1_v6w7r")
+region = Rect2(512, 53, 128, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dkvw"]
+atlas = ExtResource("1_v6w7r")
+region = Rect2(640, 53, 128, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c11an"]
+atlas = ExtResource("1_v6w7r")
+region = Rect2(768, 53, 128, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm1ce"]
+atlas = ExtResource("1_v6w7r")
+region = Rect2(896, 53, 128, 53)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_au2pm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1nkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdtwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdtso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_str2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8c1s8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dkvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c11an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm1ce")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[node name="ninja" type="CharacterBody2D"]
+show_behind_parent = true
+top_level = true
+script = ExtResource("1_mllgs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_au2pm")
+animation = &"jump"
+autoplay = "idle"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-5, -18, 4, -18, 4, -11, 9, -6, 7, 4, 8, 7, 6, 14, 8, 16, 3, 16, 0, 7, -5, 9, -6, 16, -11, 16, -9, 7, -5, -1, -11, -1, -13, -7, -13, -9, -10, -9, -8, -8, -3, -12)

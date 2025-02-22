@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccxh5ap8mw4jw"
+path="res://.godot/imported/(LOOP-READY) Track 5 - Docks_1.wav-8aae58f92e21cb172a1a5491d3b553ba.sample"
+
+[deps]
+
+source_file="res://assets/WAV/WAV/(LOOP-READY) Track 5 - Docks_1.wav"
+dest_files=["res://.godot/imported/(LOOP-READY) Track 5 - Docks_1.wav-8aae58f92e21cb172a1a5491d3b553ba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

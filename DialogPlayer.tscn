@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7ev7pb868aq2"]
+
+[ext_resource type="Script" path="res://dialog_player.gd" id="1_r4un1"]
+[ext_resource type="Texture2D" uid="uid://cg4o3ru7dkwhj" path="res://assets/PaperUiStuff - Copy/PaperUiPanelCartoony.png" id="2_pwtno"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_r4un1")
+
+[node name="background" type="TextureRect" parent="."]
+offset_right = 1521.0
+offset_bottom = 471.0
+texture = ExtResource("2_pwtno")
+
+[node name="TextLabel" type="Label" parent="."]
+offset_left = 524.0
+offset_top = 64.0
+offset_right = 1361.0
+offset_bottom = 392.0
+autowrap_mode = 2
