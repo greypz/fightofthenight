@@ -434,7 +434,6 @@ top_level = true
 script = ExtResource("1_c4ayc")
 
 [node name="krauc" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(1, 6)
 sprite_frames = SubResource("SpriteFrames_q1hfq")
 animation = &"crochidle"
@@ -448,7 +447,6 @@ frame_progress = 0.367216
 script = SubResource("GDScript_7binw")
 
 [node name="DialogInteractionArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 0
 
@@ -456,7 +454,6 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_fo11g")
 
 [node name="krauçpoligons" type="CollisionPolygon2D" parent="."]
-visible = false
 position = Vector2(-1, 10)
 polygon = PackedVector2Array(3, -15, 6, -15, 9, -11, 9, 10, 1, 10, 1, 6, -4, 7, -4, 9, -10, 9, -5, -10, 1, -12)
 

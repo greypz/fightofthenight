@@ -2,6 +2,8 @@ extends CharacterBody2D
 class_name Player
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var crouchANİMATED_sprite_2d: AnimatedSprite2D = $krauc
+@onready var walkshape: CollisionPolygon2D = $CollisionPolygon2D
+@onready var crouchshape: CollisionPolygon2D = $krauçpoligons
 
 var is_turning: bool = false
 var previous_direction: int = 0  # -1 for left, 1 for right
@@ -80,6 +82,8 @@ func _physics_process(delta: float) -> void:
 	
 		#Handle stupid niggers.
 	if Input.is_action_pressed("crouch") and is_on_floor():
+		walkshape.set_deferred("disabled",false)
+		crouchshape.set_deferred("disabled",true)
 		animated_sprite_2d.visible = false
 		crouchANİMATED_sprite_2d.visible = true
 		if direction > 0:
